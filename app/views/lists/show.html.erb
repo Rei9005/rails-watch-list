@@ -1,26 +1,24 @@
 <div class="container">
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand fs-2">
+    <a class="navbar-brand fs-2 text-white">
       Lists
     </a>
-    <%= link_to "Back to the lists", lists_path(@list), class: " btn  text-decoration-none"%>
+    <%= link_to "Back to the lists", lists_path(@list), class: " text-white btn  text-decoration-none"%>
   </div>
 </nav>
 
-<h1><%= @list.name  %></h1>
+<h1 class="text-white"><%= @list.name  %></h1>
 
 <% if @list.bookmarks.any? %>
   <% @list.bookmarks.each do |bookmark| %>
-  <p><%=bookmark.movie.title%><%=bookmark.comment %><%= link_to "🗑️", bookmark_path(bookmark),data: { turbo_method: 'delete', turbo_confirm: 'For real?'}%></p>
+  <p><%=bookmark.movie.title%> : <%=bookmark.comment %><%= link_to "🗑️", bookmark_path(bookmark),data: { turbo_method: 'delete', turbo_confirm: 'For real?'}%></p>
    <% end %>
 <% else %>
-   <p>No commnets yet.</p>
+   <p class="text-white">No commnets yet.</p>
 <% end %>
 
-<% @list.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+
 
 
 
