@@ -10,22 +10,24 @@
 
 <h1 class="text-white"><%= @list.name  %></h1>
 
+<div>
 <% if @list.bookmarks.any? %>
   <% @list.bookmarks.each do |bookmark| %>
-  <p><%=bookmark.movie.title%> : <%=bookmark.comment %><%= link_to "🗑️", bookmark_path(bookmark),data: { turbo_method: 'delete', turbo_confirm: 'For real?'}%></p>
+  <p class="text-white"><%=bookmark.movie.title%> : <%=bookmark.comment %><%= link_to "🗑️", bookmark_path(bookmark),data: { turbo_method: 'delete', turbo_confirm: 'For real?'}%></p>
+  <%= image_tag bookmark.movie.poster_url, alt: "Le Wagon", width: 200 %>
    <% end %>
 <% else %>
    <p class="text-white">No commnets yet.</p>
 <% end %>
+</div>
 
 
 
 
 
-
+<div class="mt-5">
 <%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: " btn btn-primary text-decoration-none"%>
-
-
+</div>
 
 
 

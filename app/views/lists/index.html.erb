@@ -15,17 +15,14 @@
 
 
 
- <%#
-    <div class="carousel-item active">
-      <img src="https://th-thumbnailer.cdn-si-edu.com/rOtBj9QibZD7-ougknPa4MW9_NA=/fit-in/1072x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/f8/52/f8522dc3-da07-49bd-b6f6-b5ddebe7e740/muybridge_race_horse_animated.gif" class="d-block w-100" alt="edward mybridge">
-    </div> %>
 
 
 
-    <div class="cards">
+
+    <div class="cards mt-5">
   <% @lists.each do |list| %>
  <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
-  <%= list.name %>
+  <%= link_to list.name, list, class: "text-decoration-none text-white" %>
 </div>
 
   <% end %>
