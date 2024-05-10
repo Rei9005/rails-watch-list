@@ -1,0 +1,23 @@
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://th-thumbnailer.cdn-si-edu.com/rOtBj9QibZD7-ougknPa4MW9_NA=/fit-in/1072x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/f8/52/f8522dc3-da07-49bd-b6f6-b5ddebe7e740/muybridge_race_horse_animated.gif);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+  </div>
+
+
+
+ <%#
+    <div class="carousel-item active">
+      <img src="https://th-thumbnailer.cdn-si-edu.com/rOtBj9QibZD7-ougknPa4MW9_NA=/fit-in/1072x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/f8/52/f8522dc3-da07-49bd-b6f6-b5ddebe7e740/muybridge_race_horse_animated.gif" class="d-block w-100" alt="edward mybridge">
+    </div> %>
+
+
+
+    <div class="cards">
+  <% @lists.each do |list| %>
+  <%= link_to list.name, list, class: "text-decoration-none text-black"  %>
+  <% end %>
+  </div>

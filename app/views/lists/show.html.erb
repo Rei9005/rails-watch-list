@@ -1,0 +1,33 @@
+<div class="container">
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2">
+      Lists
+    </a>
+    <%= link_to "Back to the lists", lists_path(@list), class: " btn  text-decoration-none"%>
+  </div>
+</nav>
+
+<h1><%= @list.name  %></h1>
+
+<% if @list.bookmarks.any? %>
+  <% @list.bookmarks.each do |bookmark| %>
+  <p><%=bookmark.movie.title%><%=bookmark.comment %><%= link_to "🗑️", bookmark_path(bookmark),data: { turbo_method: 'delete', turbo_confirm: 'For real?'}%></p>
+   <% end %>
+<% else %>
+   <p>No commnets yet.</p>
+<% end %>
+
+
+
+<%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: " btn btn-primary text-decoration-none"%>
+
+
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,12 @@
+  <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2">
+      Lists
+    </a>
+    <%= link_to "Back to the lists", lists_path(@list), class: " btn  text-decoration-none"%>
+  </div>
+</nav>
+<%= simple_form_for @list do |f| %>
+<%=f.input :name %>
+<%= f.submit %>
+<% end %>
