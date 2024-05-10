@@ -18,6 +18,11 @@
    <p>No commnets yet.</p>
 <% end %>
 
+<% @list.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+
 
 
 <%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: " btn btn-primary text-decoration-none"%>
